@@ -8,9 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8633aa1d-185d-40cb-bcc2-1b85cc048419" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/REST_API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/REST_API.csproj" afterDir="false" />
-    </list>
+    <list default="true" id="8633aa1d-185d-40cb-bcc2-1b85cc048419" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,7 +81,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1744980550822</updated>
-      <workItem from="1744980556977" duration="2208000" />
+      <workItem from="1744980556977" duration="4654000" />
     </task>
     <servers />
   </component>
