@@ -2,8 +2,8 @@ namespace REST_API.Models;
 
 public class Visit
 {
-    DateOnly Date { get; set; }
-    Animal Animal { get; set; }
-    string Description { get; set; }
-    double Price { get; set; }
+    public DateTime Date { get; set; }
+    public Animal Animal { get; set; }
+    public string Description { get; set; }
+    public double Price { get; set; }
 }
