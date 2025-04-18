@@ -41,7 +41,17 @@ namespace REST_API.Controllers
             Database.Animals.Add(animal);
             return NoContent(); // According to MDM web docs
         }
-        
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var animal = Database.Animals.FirstOrDefault(x => x.Id == id);
+            if (animal == null)
+                return NotFound();
+
+            Database.Animals.Remove(animal);
+            return NoContent();
+        }
         
     }
 }
