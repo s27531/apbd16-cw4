@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using REST_API.Models;
 
 namespace REST_API.Controllers
 {
@@ -20,6 +21,27 @@ namespace REST_API.Controllers
             var animal = Database.Animals.FirstOrDefault(x => x.Id == id);
             return Ok(animal);
         }
+
+        [HttpPost]
+        public IActionResult Add(Animal animal)
+        {
+            Database.Animals.Add(animal);
+            return Created();
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, Animal animal)
+        {
+            var oldAnimal = Database.Animals.FirstOrDefault(x => x.Id == id);
+            if (oldAnimal == null)
+            {
+                return NotFound();
+            }
+            Database.Animals.Remove(oldAnimal);
+            Database.Animals.Add(animal);
+            return NoContent(); // According to MDM web docs
+        }
+        
         
     }
 }
