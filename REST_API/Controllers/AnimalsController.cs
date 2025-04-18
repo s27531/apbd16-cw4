@@ -13,5 +13,13 @@ namespace REST_API.Controllers
             var animals = Database.Animals;
             return Ok(animals);
         }
+
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            var animal = Database.Animals.FirstOrDefault(x => x.Id == id);
+            return Ok(animal);
+        }
+        
     }
 }
