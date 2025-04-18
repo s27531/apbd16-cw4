@@ -15,7 +15,7 @@ namespace REST_API.Controllers
             return Ok(animals);
         }
 
-        [HttpGet("{id:int}")]
+        [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
             var animal = Database.Animals.FirstOrDefault(x => x.Id == id);
@@ -26,7 +26,7 @@ namespace REST_API.Controllers
         public IActionResult Add(Animal animal)
         {
             Database.Animals.Add(animal);
-            return Created();
+            return CreatedAtAction(nameof(GetById), new { id = animal.Id }, animal);
         }
 
         [HttpPut("{id}")]
@@ -53,7 +53,7 @@ namespace REST_API.Controllers
             return NoContent();
         }
 
-        [HttpGet("{name}")]
+        [HttpGet("by-name/{name}")]
         public IActionResult GetAllByName(string name)
         {
             var animals = Database.Animals.FindAll(x => x.Name == name);
